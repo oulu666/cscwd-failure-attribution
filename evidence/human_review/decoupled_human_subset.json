@@ -1,0 +1,53 @@
+{
+  "date": "2026-11-23",
+  "source_predictions": {
+    "ld": "decoupled/test80_ld_predictions.jsonl",
+    "ld_sha256": "713c1fc1605b3415241ae8eb0d60f3cc9d1f8246cab884157e7f8045d4b609f8",
+    "scores": "split/test80_score_rows.csv",
+    "scores_sha256": "0efd17364b3e43c304c4a3fed5c1e989b34a456ca231f4237a341864f1d22854"
+  },
+  "definition": {
+    "LD": "deepseek-chat stepwise first-Yes proposal; blank when no step was positive",
+    "DS2": "vote(LD, GD), ties to the earliest (smallest) step",
+    "denominator": "all 21 final_unknown=0 rows; a blank LD is a miss"
+  },
+  "full_sample": {
+    "n": 40,
+    "ld_missing": 16
+  },
+  "localized_subset": {
+    "n": 21,
+    "ld_missing": 5,
+    "scores": {
+      "LD": {
+        "released_exact": 3,
+        "human_exact": 5
+      },
+      "DS2": {
+        "released_exact": 8,
+        "human_exact": 9
+      }
+    },
+    "ds2_vs_gd": {
+      "released_step": {
+        "fixed": 1,
+        "broken": 2,
+        "net": -1
+      },
+      "final_step": {
+        "fixed": 2,
+        "broken": 1,
+        "net": 1
+      }
+    }
+  },
+  "files": [
+    {
+      "ratings": "evidence/human_review/ratings.csv",
+      "sha256": "cc6e606af2532c3dd715ef694202489773d12b6d81490ec5a42bdcd1e5564beb",
+      "derived": "evidence/human_review/ratings_with_decoupled.csv",
+      "derived_sha256": "21bc0e3a1c6d6f287b7ef7e2ab60b8f6ade3512d7e8226c93491a91590525c46"
+    }
+  ],
+  "path_note": "All paths are relative to the repository root."
+}

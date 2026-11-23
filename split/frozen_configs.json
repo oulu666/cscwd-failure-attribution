@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-08",
+  "target": "AFTraj mistake_step (multi-LLM-judge); not earliest-unrecoverable; not pooled with Who&When/TraceElephant",
+  "dev": {
+    "n": 20,
+    "source": "20 of the already-contacted 30-task hosted pilot",
+    "domain": {"agentic": 15, "math": 5},
+    "bucket": {"early": 5, "mid": 12, "late": 3},
+    "per_action_exact": {"LQ": 6, "GQ": 9, "GD": 13, "late_q": 9},
+    "V3_exact": 10,
+    "Band64_exact": 9,
+    "coverage": 16,
+    "candidate_rule_exact": {
+      "GD": 13,
+      "maj4": 13,
+      "gd_supported": 13,
+      "gd_else_v3": 13,
+      "gd_equal_late": 13,
+      "gd_supported_else_late": 12,
+      "earliest_supported": 12,
+      "medoid": 11,
+      "V3": 10
+    }
+  },
+  "selected": {
+    "strong_single_view": "GD",
+    "v3": ["LQ", "GQ", "GD"],
+    "uniform_high": "maj4 (majority over LQ/GQ/GD/late_q, tie earliest)",
+    "diagnosis_rule": "gd_supported: choose GD if its step appears in at least 2 of the four views; otherwise V3",
+    "external_method": "official Who&When baselines: GQ whole-trace and LQ step-by-step, independently adapted; no new method claim",
+    "note": "No candidate rule beat GD on dev20. The diagnosis rule is frozen at dev parity, not selected for a dev gain."
+  },
+  "budgets": {
+    "low": "GD: 1 call per task",
+    "medium": "V3: LQ n calls + GQ + GD",
+    "high": "four views: LQ n calls + GQ + GD + late_q"
+  },
+  "test": {
+    "n": 80,
+    "source": "80 untouched AFTraj tasks; not in contacted registry",
+    "domain": {"agentic": 61, "math": 19},
+    "bucket": {"early": 18, "mid": 52, "late": 10},
+    "estimated_calls": {"low": 80, "V3": 1122, "high": 1202},
+    "status": "completed",
+    "result": {
+      "GD": 51,
+      "V3": 46,
+      "Band64": 46,
+      "maj4": 47,
+      "gd_supported": 48,
+      "coverage": 61,
+      "GD_vs_V3": {"net": 5, "mcnemar_p": 0.3018,
+                   "bootstrap95": [-2.5, 16.25]},
+      "high_vs_V3": {"maj4_net": 1, "gd_supported_net": 2,
+                     "maj4_p": 1.0, "gd_supported_p": 0.7539},
+      "cost": {"GD_requests": 80, "V3_requests": 1122,
+               "high_requests": 1202, "GD_prompt_tokens": 81953,
+               "V3_prompt_tokens": 1530254, "high_prompt_tokens": 1580200}
+    }
+  },
+  "freeze_note": "Configs and split are frozen before the test run. Test labels are read only by the scorer. The 10 remaining pilot tasks are excluded from test because they are contacted."
+}

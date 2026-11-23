@@ -1,0 +1,21 @@
+{
+  "all_test80": {
+    "n": 80,
+    "gold_content_in_lq_prompt": 80,
+    "lq_yes_at_gold": 51,
+    "gold_header_in_whole_prompt": 80,
+    "gold_content_fully_in_whole_prompt": 78,
+    "gold_header_in_late_prompt": 44,
+    "gold_content_fully_in_late_prompt": 43
+  },
+  "uncovered_19": {
+    "n": 19,
+    "gold_content_in_lq_prompt": 19,
+    "lq_yes_at_gold": 8,
+    "gold_header_in_whole_prompt": 19,
+    "gold_content_fully_in_whole_prompt": 18,
+    "gold_header_in_late_prompt": 6,
+    "gold_content_fully_in_late_prompt": 5
+  },
+  "note": "Visibility is reconstructed from the frozen prompt builders. LQ at the labeled step always includes the full prefix; GQ/GD render the whole trace with a 1,200-char per-step cap and a 24,000-char total step-content cap; late_q starts at floor(n/2)."
+}

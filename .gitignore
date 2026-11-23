@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.vscode/
+.DS_Store
+*.log
+logs/
+.env
+.env.*
+*.key
+*.pem
+decoupled/*.reproduced.jsonl

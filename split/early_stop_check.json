@@ -1,0 +1,84 @@
+{
+  "n_traces": 80,
+  "n_no_positive": 8,
+  "selection_preserved": 80,
+  "selection_changed": [],
+  "row_totals_match": {
+    "lq_full_requests": true,
+    "lq_stopped_requests": true,
+    "lq_full_prompt_tokens": true,
+    "lq_stopped_prompt_tokens": true
+  },
+  "prompt_hash_matches": {
+    "GQ": 80,
+    "GD": 80,
+    "late_q": 80,
+    "total": 240
+  },
+  "lq_full": {
+    "requests": 962,
+    "prompt_tokens": 1361527,
+    "completion_tokens": 182199,
+    "latency_s": 4391.788,
+    "missing_token_rows": 0
+  },
+  "lq_early_stop": {
+    "requests": 270,
+    "prompt_tokens": 123052,
+    "completion_tokens": 36093,
+    "latency_s": 907.941,
+    "missing_token_rows": 0
+  },
+  "GQ": {
+    "requests": 80,
+    "prompt_tokens": 86774,
+    "completion_tokens": 8836,
+    "latency_s": 241.423,
+    "missing_token_rows": 0
+  },
+  "GD": {
+    "requests": 80,
+    "prompt_tokens": 81953,
+    "completion_tokens": 5335,
+    "latency_s": 92.457,
+    "missing_token_rows": 0
+  },
+  "late_q": {
+    "requests": 80,
+    "prompt_tokens": 49946,
+    "completion_tokens": 9136,
+    "latency_s": 245.116,
+    "missing_token_rows": 0
+  },
+  "V3_full": {
+    "requests": 1122,
+    "prompt_tokens": 1530254,
+    "completion_tokens": 196370,
+    "latency_s": 4725.668
+  },
+  "V3_early_stop": {
+    "requests": 430,
+    "prompt_tokens": 291779,
+    "completion_tokens": 50264,
+    "latency_s": 1241.821
+  },
+  "four_view_full": {
+    "requests": 1202,
+    "prompt_tokens": 1580200,
+    "completion_tokens": 205506,
+    "latency_s": 4970.784
+  },
+  "four_view_early_stop": {
+    "requests": 510,
+    "prompt_tokens": 341725,
+    "completion_tokens": 59400,
+    "latency_s": 1486.937
+  },
+  "notes": [
+    "Counterfactual replay over saved outputs; no new API execution.",
+    "Requests are the ledger's attempt counts; all test80 rows have requests=1.",
+    "Summed latency is the sum of per-request durations, not wall-clock time; six traces ran concurrently and no end-to-end latency was measured.",
+    "Prompt hashes for GQ/GD/late_q were recomputed from the input trajectory and question only, so the schedule does not depend on discarded LQ calls.",
+    "LQ selection is the first parsed Yes; 8 traces have no positive answer and retain the full LQ sequence."
+  ]
+}
