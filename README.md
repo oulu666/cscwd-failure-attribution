@@ -6,7 +6,7 @@ The artifact contains the frozen test80 evidence, the anonymous human label audi
 
 ## Manuscript and workflow figure
 
-Read the [revised six-page manuscript](cscwd2027_paper.pdf) alongside the [supplement](supplement_cscwd.pdf). The manuscript cites commit `418f94f` for the frozen experimental evidence. Figure 1 is available as an [editable SVG](figures/fig1.svg) and a [vector PDF](figures/fig1.pdf).
+Read the [final six-page manuscript](cscwd2027_paper.pdf) alongside the [supplement](supplement_cscwd.pdf). The manuscript cites commit `418f94f` for the frozen experimental evidence. Figure 1 is available as an [editable Visio drawing](figures/fig1.vsdx), an [SVG](figures/fig1.svg), and a [vector PDF](figures/fig1.pdf).
 
 ## Scope and claim boundaries
 
