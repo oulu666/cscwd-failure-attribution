@@ -4,6 +4,10 @@ Companion artifact for the CSCWD 2027 submission *Diagnosing Failure Attribution
 
 The artifact contains the frozen test80 evidence, the anonymous human label audit, and the decoupled model–view control reported in supplement S9. It does **not** contain raw upstream trajectories, credentials, or reviewer identities.
 
+## Manuscript and workflow figure
+
+Read the [revised six-page manuscript](cscwd2027_paper.pdf) alongside the [supplement](supplement_cscwd.pdf). The manuscript cites commit `418f94f` for the frozen experimental evidence. Figure 1 is available as an [editable SVG](figures/fig1.svg) and a [vector PDF](figures/fig1.pdf).
+
 ## Scope and claim boundaries
 
 - AFTraj `mistake_step` labels are multi-LLM-judge labels, not human labels. The human review is a 40-trace label audit; 21 traces were localized and form the sensitivity subset.
